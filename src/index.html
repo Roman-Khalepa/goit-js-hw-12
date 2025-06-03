@@ -1,27 +1,20 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Пошук зображень Pixabay</title>
+  <title>Pixabay Image Search</title>
   <link rel="stylesheet" href="./css/styles.css" />
 </head>
 <body>
   <form class="form">
     <label>
-      <input 
-        type="text" 
-        name="search-text" 
-        placeholder="Введіть слово для пошуку..." 
-        required
-      />
+      <input type="text" name="search-text" placeholder="Search images..." required />
     </label>
-    <button type="submit">Пошук</button>
+    <button type="submit">Search</button>
   </form>
-
   <ul class="gallery"></ul>
-  <button class="load-more is-hidden">Завантажити ще</button>
+  <button class="load-more is-hidden">Load more</button>
   <span class="loader is-hidden"></span>
-  
   <script type="module" src="./main.js"></script>
 </body>
 </html>
