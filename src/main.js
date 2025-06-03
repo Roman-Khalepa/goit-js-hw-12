@@ -23,7 +23,7 @@ form.addEventListener('submit', async e => {
   const query = form.elements['search-text'].value.trim();
   if (!query) {
     iziToast.error({
-      message: 'Please enter a search query!',
+      message: 'Введіть слово для пошуку!',
       position: 'topRight',
     });
     return;
@@ -42,7 +42,7 @@ form.addEventListener('submit', async e => {
 
     if (!data.hits.length) {
       iziToast.info({
-        message: 'Sorry, there are no images matching your search query. Please try again!',
+        message: 'Нічого не знайдено. Спробуйте інший запит!',
         position: 'topRight',
       });
       return;
@@ -54,7 +54,7 @@ form.addEventListener('submit', async e => {
   } catch (error) {
     hideLoader();
     iziToast.error({
-      message: 'An error occurred. Please try again later.',
+      message: 'Сталася помилка. Спробуйте пізніше.',
       position: 'topRight',
     });
   }
@@ -69,7 +69,7 @@ loadMoreBtn.addEventListener('click', async () => {
 
     createGallery(data.hits);
 
-    // Плавний скрол (дві висоти картки)
+    // Плавний скрол до нової порції
     const { height: cardHeight } = gallery.firstElementChild.getBoundingClientRect();
     window.scrollBy({
       top: cardHeight * 2,
@@ -80,14 +80,14 @@ loadMoreBtn.addEventListener('click', async () => {
     if (loadedImages >= totalHits) {
       hideLoadMoreButton();
       iziToast.info({
-        message: "We're sorry, but you've reached the end of search results.",
+        message: "Ви дійшли до кінця результатів.",
         position: 'topRight',
       });
     }
   } catch (error) {
     hideLoader();
     iziToast.error({
-      message: 'An error occurred. Please try again later.',
+      message: 'Сталася помилка. Спробуйте пізніше.',
       position: 'topRight',
     });
   }
