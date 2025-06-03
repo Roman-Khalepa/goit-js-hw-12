@@ -69,7 +69,6 @@ loadMoreBtn.addEventListener('click', async () => {
 
     createGallery(data.hits);
 
-    // Плавний скрол до нової порції
     const { height: cardHeight } = gallery.firstElementChild.getBoundingClientRect();
     window.scrollBy({
       top: cardHeight * 2,
